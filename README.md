@@ -110,80 +110,102 @@ Quant_project/
 ├─ Strategy_ma_cross.py
 ├─ requirements.txt
 └─ README.md
-Workflow
+```
 
-Research in notebooks
-→ formalize strategy in src/strategies
-→ validate with backtest engine
-→ evaluate performance with metrics/diagnosis
-→ optimize parameters
-→ validate on train/test split
-→ run paper trading workflow
+## Workflow
+
+Research in notebooks  
+→ formalize strategy in `src/strategies`  
+→ validate with backtest engine  
+→ evaluate performance with metrics/diagnosis  
+→ optimize parameters  
+→ validate on train/test split  
+→ run paper trading workflow  
 → prepare for live execution
 
-Example Strategy Research
+## Example Strategy Research
 
 The project currently includes research and experimentation on strategies such as:
 
-Moving Average Cross strategy
-CCI + MA + Volume + ATR trailing stop strategy (research notebook)
+- Moving Average Cross strategy
+- CCI + MA + Volume + ATR trailing stop strategy (research notebook)
 
 The framework is designed so that strategy rules can be changed at the research layer while keeping the backtesting and execution layers reusable.
 
-Installation
-1. Clone the repository
+## Installation
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/timmy0972816111-cyber/quant-project.git
 cd quant-project
-2. Create virtual environment
+```
+
+### 2. Create virtual environment
+```bash
 python -m venv .venv
-3. Activate virtual environment
-Windows PowerShell
+```
+
+### 3. Activate virtual environment
+#### Windows PowerShell
+```bash
 .venv\Scripts\Activate.ps1
-Windows CMD
+```
+#### Windows CMD
+```bash
 .venv\Scripts\activate.bat
-4. Install dependencies
+```
+### 4. Install dependencies
+```bash
 pip install -r requirements.txt
-Example Usage
-Run parameter optimization
+```
+## Example Usage
+### Run parameter optimization
+```bash
 python 0.Run_optimization.py
-Run paper trading workflow
+```
+### Run paper trading workflow
+```bash
 python -m src.live.run_paper
-Open research notebook
+```
+### Open research notebook
 
 Open:
-
-notebooks/CCI_Strategy.ipynb
-
+ `notebooks/CCI_Strategy.ipynb` 
 in Jupyter Notebook or VS Code Notebook.
 
-Design Principles
+## Design Principles
 
 This project follows several core design principles:
 
-Separation of concerns
-Strategy logic, backtesting logic, and execution logic are separated.
-Reusable research framework
-New strategies should ideally reuse the same backtest and evaluation framework.
-Execution-aware research
-Strategy development is not limited to backtesting only, but also considers the path toward paper/live execution.
-Extensibility
-The structure is designed to support future additions such as more strategies, more robust portfolio logic, and broker API integration.
-Future Improvements
+- **Separation of concerns**  
+  Strategy logic, backtesting logic, and execution logic are separated.
+
+- **Reusable research framework**  
+  New strategies should ideally reuse the same backtest and evaluation framework.
+
+- **Execution-aware research**  
+  Strategy development is not limited to backtesting only, but also considers the path toward paper/live execution.
+
+- **Extensibility**  
+  The structure is designed to support future additions such as more strategies, more robust portfolio logic, and broker API integration.
+
+## Future Improvements
 
 Planned improvements include:
 
-Walk-forward validation
-Multi-asset portfolio backtesting
-Broker state persistence
-Order logging system
-Live broker API integration
-More robust intraday data pipeline
-Enhanced execution simulation (slippage / partial fills / order types)
-Notes
+- Walk-forward validation
+- Multi-asset portfolio backtesting
+- Broker state persistence
+- Order logging system
+- Live broker API integration
+- More robust intraday data pipeline
+- Enhanced execution simulation (slippage / partial fills / order types)
 
-This project is currently intended for research and educational use.
-It is not production-ready for live trading yet.
+## Notes
 
-Author
+This project is currently intended for research and educational use. It is not production-ready for live trading yet.
+
+## Author
 
 Built by Timmy as a personal quantitative trading research project.
